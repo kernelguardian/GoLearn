@@ -13,5 +13,5 @@ func main() {
 
 func changeColor(color *string) {
 	*color = "Red"
-	// Test
+	// Check Again
 }
