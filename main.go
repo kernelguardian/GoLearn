@@ -1,17 +1,13 @@
 package main
 
-import "log"
+import "github.com/gofiber/fiber/v2"
 
 func main() {
-	var myColor string
-	myColor = "Green"
-	log.Println("myColor is:", myColor)
-	changeColor(&myColor)
-	log.Println("myColor is:", myColor)
+	app := fiber.New()
 
-}
+	app.Get("/test/h", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, World!")
+	})
 
-func changeColor(color *string) {
-	*color = "Red"
-	// Check Again
+	app.Listen(":3000")
 }
